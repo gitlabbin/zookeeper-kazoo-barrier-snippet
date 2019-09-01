@@ -27,7 +27,8 @@ def user_input():
     parser = argparse.ArgumentParser(description='zkbarrier - Zookeeper Barrier '
                                                  'Client barrier')
 
-    parser.add_argument('-r', '--replicas', type=int, help='Number of service replicas', default=3)
+    parser.add_argument('-r', '--replicas', type=int, help='Number of service replicas', default=3,
+                        choices=xrange(2, 10))
     parser.add_argument('-z', '--zookeeper', help='Zookeeper server connection url zkhost:port', default='zk:2181')
     parser.add_argument('-d', '--debug', help='Enable debug logging', action='store_true')
     parser.add_argument('-v', '--version', action='version', version='%(prog)s ' + __version__)
