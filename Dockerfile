@@ -7,4 +7,6 @@ RUN apk update && pip install kazoo
 ADD . /home/barrier
 WORKDIR /home/barrier
 
-CMD sh -c 'sleep 5 && python src/Main.py' 
+RUN python setup.py install
+
+CMD barrier -h
