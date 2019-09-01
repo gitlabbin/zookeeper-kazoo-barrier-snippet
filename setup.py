@@ -42,4 +42,8 @@ setup(
     # Dependent packages (distributions)
     install_requires=install_requires,
     dependency_links=dependency_links,
+    entry_points={
+        'console_scripts': [
+            'barrier = src.barrier:main'
+        ]},
 )
